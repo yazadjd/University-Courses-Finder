@@ -1,0 +1,13 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.row{
+  margin-top: 15px;
+}
+.alert{
+  margin-top: 20px;
+}
+

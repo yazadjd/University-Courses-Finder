@@ -1,0 +1,111 @@
+<div class="container">
+  <div class="jumbotron">
+    <h2>Course Finder</h2>
+    <p>Course Finder is a simple application that suggests courses for a Bachelor's level based on your
+      hobbies/interests.</p>
+  </div>
+  <div class="row">
+    <div class=col>
+      <form [formGroup]="newRecordForm">
+
+        <div class="row">
+          <div class="col">
+            <div ngbDropdown class="d-inline-block">
+              <div class="row">
+                <label id="dropdownBasic1" for="country"><h3><span class="badge badge-secondary">Countries</span></h3>
+                </label>
+              </div>
+              <div class="row">
+                <select aria-labelledby="dropdownBasic1" formControlName="countrySelected" id="country"
+                        (change)="loadCities()">
+                  <option *ngFor="let country of countryArray" [ngValue]="country">{{country}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="col" *ngIf="isCityVisible">
+            <div ngbDropdown class="d-inline-block">
+              <div class="row">
+                <label id="dropdownBasic2" for="city"><h3><span class="badge badge-secondary">Cities</span></h3>
+                </label>
+              </div>
+              <div class="row">
+                <select aria-labelledby="dropdownBasic2" formControlName="citySelected" id="city">
+                  <option *ngFor="let city of cityArray" [ngValue]="city">{{city}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="row">
+              <label id="checkboxes"><h3><span class="badge badge-secondary">Hobbies</span></h3>
+              </label>
+            </div>
+            <div class="row wrapper">
+              <div *ngFor="let hobbies of hobbyInterfaceArray">
+                <input type="checkbox" name="hobbies.hobbyName" value="hobbies.hobbyName" [checked]="hobbies.isChecked"
+                       (change)="updateHobby(hobbies)"/>
+                {{hobbies.hobbyName}}
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col align-self-center">
+            <button type="button" class="btn btn-primary" (click)="getCourses()">Submit</button>
+          </div>
+
+        </div>
+
+
+      </form>
+    </div>
+
+    <div class="col">
+
+      <table class="table table-striped" *ngIf="isTableVisible">
+        <thead>
+        <tr>
+          <th>S. No.</th>
+          <th>Course Name</th>
+          <th>University Name</th>
+          <th>Duration</th>
+          <th>Fees</th>
+          <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let course of coursesArray; index as i">
+          <th>{{i + 1}}</th>
+          <td>{{course.name}}</td>
+          <td>{{course.uniName}}</td>
+          <td>{{course.duration}}</td>
+          <td>{{course.fees}}</td>
+          <td>{{course.description}}</td>
+        </tr>
+        </tbody>
+      </table>
+
+
+    </div>
+
+  </div>
+</div>
+
+<div class="alert alert-dark alert-dismissible" *ngIf="isAlertVisible">
+  <ngb-alert [dismissible]="true" (close)="closeAlert()">
+    <strong>No courses found!</strong>
+  </ngb-alert>
+</div>
+<div class="alert alert-dark alert-dismissible" *ngIf="noCountryAlert">
+  <ngb-alert [dismissible]="true" (close)="closeAlert()">
+    <strong>Please choose a country!</strong>
+  </ngb-alert>
+</div>
+
