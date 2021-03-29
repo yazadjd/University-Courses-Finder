@@ -1,3 +1,12 @@
+/*
+
+Author: Yazad Jamshed Davur <yazadjd@yahoo.com>
+
+Location.java defines the Location Table entity that contains the attributes ID,
+Country and City. It has a Many to Many relationship with the Courses Entity/Table.
+
+*/
+
 package com.integradev.unicoursefinder.entity;
 
 import javax.persistence.*;
@@ -47,8 +56,8 @@ public class Location {
         this.courses = courses;
     }
 
-    public void addCourse(Course course) {
-        courses.add(course);
-        course.getLocations().add(this);
-    }
+  public void addCourse(Course course) {
+    courses.add(course);
+    course.getLocations().add(this);
+  }
 }

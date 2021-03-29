@@ -1,6 +1,21 @@
-// Author: Yazad Jamshed Davur <yazadjd@yahoo.com>
+/*
+
+Author: Yazad Jamshed Davur <yazadjd@yahoo.com>
+
+Controller.java is a SpringBoot REST Controller which accepts 'GET' requests from
+mapped endpoints and returns back the corresponding responses to the UI.
+
+The end points are defined as follows:
+
+/country: To populate the UI with a set of countries for the user to choose from.
+/city: To populate the UI with a set of cities depending on the chosen country.
+/hobby: To populate the UI with a set of hobbies.
+/submit: Accepts the users preferences and returns a Set of Courses back to the UI.
+
+*/
 
 package com.integradev.unicoursefinder.controller;
+
 import com.integradev.unicoursefinder.dto.CourseDTO;
 import com.integradev.unicoursefinder.service.ICourseService;
 import com.integradev.unicoursefinder.service.IHobbyService;
