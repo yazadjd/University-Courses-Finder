@@ -1,27 +1,32 @@
 # CourseFinderApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.15.
+This project was generated with Angular CLI 9.1.15 and Apache Maven 3.6.3.
 
-## Development server
+The aim of this project is to help students find Undergraduate Courses based on their hobbies/interests.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The backend Database was created using PostgreSql. You will need to create a dummy database to test this project.
+The ER and UML diagrams are attached as image files in the root directory.
 
-## Code scaffolding
+## Major Dependencies
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Dependencies are as follows:
 
-## Build
+1. Java 12
+1. Node v14.15.4
+1. Npm v6.14.10
+1. Angular CLI v9.1.15
+1. Maven v3.6.3
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Running the Project
 
-## Running unit tests
+There are two parts of this Project:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Running the backend:
+    1. On importing or pulling the repo, you will need to simply run `maven clean install` in the Java terminal. 
+    This will automatically install all the dependencies present in the pom.xml file. This might take a while.
+    1. After the above step is completed, simply run the main application `src\main\java\com\integradev\unicoursefinder\UniCourseFinderApplication.java`
+1. Hosting the User Interface:
+    1. Run `npm install`, which will install all the front end dependencies like Bootstrap, etc.
+    1. Once the application is up and running, run `ng serve` in the terminal which will host the Web Service on a local server.
+    1. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
