@@ -1,3 +1,12 @@
+<!--
+
+Author: Yazad Jamshed Davur <yazadjd@yahoo.com>
+
+This file contains HTML code for the User Interface that is integrated with
+Bootstrap CSS and Typescript.
+
+-->
+
 <div class="container">
   <div class="jumbotron">
     <h2>Course Finder</h2>
@@ -7,7 +16,6 @@
   <div class="row">
     <div class=col>
       <form [formGroup]="newRecordForm">
-
         <div class="row">
           <div class="col">
             <div ngbDropdown class="d-inline-block">
@@ -75,8 +83,8 @@
           <th>S. No.</th>
           <th>Course Name</th>
           <th>University Name</th>
-          <th>Duration</th>
-          <th>Fees</th>
+          <th>Duration (years)</th>
+          <th>Total Fees (AUD)</th>
           <th>Description</th>
         </tr>
         </thead>

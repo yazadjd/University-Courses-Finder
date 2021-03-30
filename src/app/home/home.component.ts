@@ -1,7 +1,38 @@
+/*
+
+Author: Yazad Jamshed Davur <yazadjd@yahoo.com>
+
+This Home Typescript component works with the HTML component to call services
+on demand and listen for responses to populate the User Interface.
+
+ngOnInit(): The initialization function called on opening the web-page. It
+requests the home service for an array of countries and hobbies that will
+be displayed on the web page.
+
+loadCities(): This method is called as soon as a country is selected. It
+requests the home service for an array of cities that will then be
+displayed on the web page.
+
+updateHobby(): This method changes the Boolean value for the corresponding
+hobby for every time that the hobby is checked or unchecked.
+
+getCourses(): This method is called when the user submits his/her preferences.
+It sends a request to the home service along with the selected values of
+country, city and hobbies if any and listens for a response in the form of an
+array of courses that will then be displayed on the web page in the form of an
+HTML Table.
+
+closeAlert(): This method simply closes any alerts when the user hits the cross
+sign.
+
+reset(): This method resets the boolean values for certain class variables in
+case of a crash or during initialization.
+
+*/
+
 import {Component, OnInit} from '@angular/core';
 import {HomeService} from "../service/home.service";
 import {FormBuilder, FormGroup} from "@angular/forms";
-import {count} from "rxjs/operators";
 import {Course, HobbyInterface} from "./interfaces";
 
 @Component({
@@ -23,16 +54,13 @@ export class HomeComponent implements OnInit {
   noCountryAlert: Boolean;
 
   constructor(public homeService: HomeService, private fb: FormBuilder) {
+    // Constructor Initializations
     this.countryArray = [];
     this.cityArray = [];
     this.hobbyArray = [];
-    this.isCityVisible = false;
     this.hobbyInterfaceArray = [];
     this.selectedHobbyArray = [];
     this.coursesArray = [];
-    this.isTableVisible = false;
-    this.isAlertVisible = false;
-    this.noCountryAlert = false;
   }
 
   ngOnInit(): void {
@@ -44,7 +72,6 @@ export class HomeComponent implements OnInit {
 
     this.homeService.getHobbies().subscribe(data => {
         this.hobbyArray = data;
-        console.log(data)
         for (var val of this.hobbyArray) {
           this.hobbyInterfaceArray.push({hobbyName: val, isChecked: false});
         }
@@ -96,9 +123,7 @@ export class HomeComponent implements OnInit {
             this.isTableVisible = true;
           }
         });
-
     }
-
   }
 
   closeAlert(): void {

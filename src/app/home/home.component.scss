@@ -1,3 +1,12 @@
+/*
+
+Author: Yazad Jamshed Davur <yazadjd@yahoo.com>
+
+This CSS component describes the presentation of different elements present in
+the HTML component file.
+
+*/
+
 @import "~bootstrap/dist/css/bootstrap.css";
 
 .wrapper{
@@ -10,4 +19,7 @@
 .alert{
   margin-top: 20px;
 }
-
+.jumbotron {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

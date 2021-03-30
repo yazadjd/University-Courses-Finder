@@ -1,3 +1,9 @@
+/*
+
+This interface defines the non-primitive objects that will be used in the UI.
+
+*/
+
 export interface HobbyInterface {
   hobbyName: string;
   isChecked: Boolean;
