@@ -4,8 +4,12 @@ This project was generated with Angular CLI 9.1.15 and Apache Maven 3.6.3.
 
 The aim of this project is to help students find Undergraduate Courses based on their hobbies/interests.
 
-The backend Database was created using PostgreSql. You will need to create a dummy database to test this project.
-The ER and UML diagrams are attached as image files in the root directory.
+The front-end was developed using Angular as a web application framework. The backend Database was created in
+PostgreSql RDBMS. Java Persistence API (JPA) is used to handle the Object Relation Management (ORM) in Java. 
+
+You will need to create a dummy database to test this project. Edit the application.properties file appropriately.
+
+The ER and UML diagrams are attached as image files in the root directory for reference.
 
 ## Major Dependencies
 
